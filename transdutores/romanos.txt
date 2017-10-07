@@ -1,0 +1,23 @@
+objectivo: dar reverse à string antes de processar
+0	1	_
+1	2	0	
+1	2	1	I
+1	2	2	II
+1	2	3	III
+1	2	4	IV
+1	2	5	V
+1	2	6	VI
+1	2	7	VII
+1	2	8	VII
+1	2	9	IX
+2	3	_
+2	3	0
+2	3	1	X
+2	3	2	XX
+2	3	3	XXX
+2	3	4	XL
+2	3	5	L
+2	3	6	LX
+2	3	7	LXX
+2	3	8	LXXX
+2	3	9	XC
