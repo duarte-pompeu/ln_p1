@@ -1,10 +1,22 @@
-Foram testados todos os exemplos do enunciado com sucesso, usando word2fst e composição de FSTs.
-Os codificadores e descodificadores foram testados da seguinte forma:
+ist173008
+Duarte Pompeu
 
-$ exemplo1 -> codificador -> mail1.fst # pseudo-comando
-$ exemplo1 -> transdutor1 -> transdutor2 -> transdutor3 > /tmp/c.fst # pseudo-comando
-$ diff -s mail1.fst  /tmp/c.fst
-Files mail1.fst and /tmp/c.fst are identical
-	
+# Estrutura do projecto
+Não tendo sido especificada uma estrutura, organizei por pastas. Os nomes dos ficheiros respeitam as regras enunciado, os nomes das pastas são intuitivos: romanos, 1, 2, 3, codificador, descodificador. Dentro destas pastas, destão os txt, fst e pdf's. Os pdf's pedidos têm nome equivalente aos FST pedidos (mas com extensão PDF). Os mails descodificados/codificados encontram-se na pasta descodificador ou codificador, e o nome é a ordem pela qual aparecem: descodificador/mail{1,2}.pdf, codificador/mail1.pdf.
+
+# Scripts
+
+aux.sh define várias funções auxiliares que usei, para evitar estar sempre a escrever --isymbols=... ou --osymbols=....
+run.sh compila todos os ficheiros para .fst e .pdf.
+
+# Testes
+Foram testados todos os exemplos do enunciado com sucesso, usando word2fst e composição de FSTs, tanto nos romanos, como nos transdutores{1,2,3} e nos codificadores e descodificadores.
 
 
+Na descodificação do mail, aparece uma ambiguidade estranha, pois entendo que a descodificação deveria ser linear. Esta ambiguidade é:
+eps ->	eps
+eps ->	0
+
+Isto deve-se à inversão do 1º transdutor, que usa o FST "romano". Assumi que uma entrada do tipo '09' era possível, sendo convertida para 0:eps->9/I->eps:X
+Tal como assumi que podia nao haver decimal, por exemplo na entrada '9', e seria preciso uma transição eps:eps->9/I->eps:X.
+Assim, no inverso, surge a ambiguidade eps:eps/eps:0. Como não vejo maneira de desambiguar este caso, deixo-o assim, com a nota a explicar o raciocínio.

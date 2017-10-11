@@ -60,3 +60,5 @@ fstcomp transdutores/descodificador/exemplos/3332111_3412_321_n_13_2111_321_0_33
 fstd transdutores/descodificador/mail2.fst
 
 
+
+

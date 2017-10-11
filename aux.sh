@@ -6,7 +6,8 @@ echo $SYMS
 
 pdf(){
 	# your systems pdf reader
-	evince $@
+	#~ evince $@
+	echo;
 }
 
 fst(){
