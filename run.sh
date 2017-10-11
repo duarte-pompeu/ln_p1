@@ -26,4 +26,22 @@ fst transdutores/2/transdutor2.txt;
 python3 material_apoio/scripts/compact2fst.py transdutores/3/transdutor3_compact.txt > transdutores/3/transdutor3.txt; 
 fst transdutores/3/transdutor3.txt;
 
+# codificador
+
+fstarcsort transdutores/1/transdutor1.fst > transdutores/codificador/1.fst
+fstarcsort transdutores/2/transdutor2.fst > transdutores/codificador/2.fst
+fstarcsort transdutores/3/transdutor3.fst > transdutores/codificador/3.fst
+
+fstcomp transdutores/codificador/1.fst transdutores/codificador/2.fst /tmp/aux.fst;
+#echo "1";
+fstcomp /tmp/aux.fst transdutores/codificador/3.fst transdutores/codificador/codificador.fst;
+#echo "2";
+fstd transdutores/codificador/codificador.fst
+
+#codificar mensagem
+fstcomp transdutores/codificador/exemplos/biblioteca_do_palacio_de_monserrate_na_estante_a_esquerda_no_dia_14_de_novembro_pelas_10_23_de_maio_.fst\
+	transdutores/codificador/codificador.fst\
+	transdutores/codificador/mail1.fst; 
+fstd transdutores/codificador/mail1.fst
+
 
