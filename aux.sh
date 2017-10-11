@@ -39,7 +39,7 @@ fstd(){
 	src=$1
 	base=$(echo $src | cut -f 1 -d '.')
 	
-	draw;
+	echo draw;
 	fstdraw --isymbols=$SYMS --osymbols=$SYMS --portrait $src | dot -Tpdf > $base.pdf;
 	pdf $base.pdf
 }
