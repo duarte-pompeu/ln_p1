@@ -1,0 +1,10 @@
+Foram testados todos os exemplos do enunciado com sucesso, usando word2fst e composição de FSTs.
+Os codificadores e descodificadores foram testados da seguinte forma:
+
+$ exemplo1 -> codificador -> mail1.fst # pseudo-comando
+$ exemplo1 -> transdutor1 -> transdutor2 -> transdutor3 > /tmp/c.fst # pseudo-comando
+$ diff -s mail1.fst  /tmp/c.fst
+Files mail1.fst and /tmp/c.fst are identical
+	
+
+
