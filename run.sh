@@ -40,8 +40,23 @@ fstd transdutores/codificador/codificador.fst
 
 #codificar mensagem
 fstcomp transdutores/codificador/exemplos/biblioteca_do_palacio_de_monserrate_na_estante_a_esquerda_no_dia_14_de_novembro_pelas_10_23_de_maio_.fst\
-	transdutores/codificador/codificador.fst\
+	transdutores/codificador/codificador.fst \
 	transdutores/codificador/mail1.fst; 
 fstd transdutores/codificador/mail1.fst
+
+# descodificador
+fstinvert transdutores/codificador/codificador.fst > transdutores/descodificador/descodificador.fst
+fstd transdutores/descodificador/descodificador.fst
+
+#descodificar mensagens
+fstcomp transdutores/descodificador/exemplos/Xs_21_pm_32111_d9_d9z97r0_3332111_3412_312_n_13_32111_31_0_.fst \
+	transdutores/descodificador/descodificador.fst \
+	transdutores/descodificador/mail1.fst
+fstd transdutores/descodificador/mail1.fst
+
+fstcomp transdutores/descodificador/exemplos/3332111_3412_321_n_13_2111_321_0_3311_d9_jXn9Vr0_p9lXs_312_h_.fst \
+	transdutores/descodificador/descodificador.fst \
+	transdutores/descodificador/mail2.fst; 
+fstd transdutores/descodificador/mail2.fst
 
 

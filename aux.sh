@@ -41,5 +41,5 @@ fstd(){
 	
 	echo draw;
 	fstdraw --isymbols=$SYMS --osymbols=$SYMS --portrait $src | dot -Tpdf > $base.pdf;
-	pdf $base.pdf
+	pdf $base.pdf > /dev/null &
 }
