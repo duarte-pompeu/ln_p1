@@ -1,9 +1,10 @@
 Grupo 63
 Elementos:
-  73008, Duarte Pompeu
+ 73008, Duarte Pompeu
 
 # Estrutura do projecto
-Não tendo sido especificada a hierarquia de pastas, organizei por pastas. Os nomes dos ficheiros respeitam as regras enunciado e os nomes das pastas são intuitivos: romanos/, 1/, 2/, 3/, codificador/, descodificador/. Dentro destas pastas, estão os txt, fst e pdf's. Os pdf's pedidos têm nome equivalente aos FST pedidos (mas com extensão PDF). Os mails descodificados/codificados encontram-se na pasta descodificador ou codificador, e o nome é a ordem pela qual aparecem: descodificador/mail{1,2}.pdf, codificador/mail1.pdf.
+
+Não tendo sido especificada a hierarquia de pastas, distribui os ficheiros por pastas. Os nomes dos ficheiros respeitam as regras do enunciado e os nomes das pastas são intuitivos: romanos/, 1/, 2/, 3/, codificador/, descodificador/. Dentro destas pastas, estão os txt, fst e pdf's. Os pdf's pedidos têm nome equivalente aos FST pedidos (mas com extensão PDF). Os mails descodificados/codificados encontram-se na pasta descodificador ou codificador, e o nome é a ordem pela qual aparecem: descodificador/mail{1,2}.pdf, codificador/mail1.pdf.
 
 # Scripts
 
@@ -13,21 +14,12 @@ Incluo o material de apoio na entrega devido a ter os scripts python e o ficheir
 
 # Desenvolvimento
 
-## TransdutorRomanos
-
-Este transdutor converte números decimais em romanos. O único obstáculo que tive foi inicialmente pensar que poderia fazer algo do tipo 8:LXXX. Quando obtive erro, percebi que só poderia haver um símbolo de saída, e recorri aos epsilons, para converter em algo como 8:L->eps:X->eps:X->eps:X.
-
-## Transdutor1
-
-Resulta da união do transdutorRomanos e do transdutorPalavras, e a este resultado aplica-se uma closure.
-
-## Transdutores 2 e 3
-
-Relativamente óbvios. Nas situações em que uma saída depende do caracter sucessor, tem que se bifurcar em vários estados diferentes, um para cada caso diferente.
+O projecto foi relativamente simples, a parte mais difícil foi instalar o openFST, aprender os seus comandos e testar diferentes entradas e saídas.
 
 # Testes
-Foram testados todos os exemplos do enunciado com sucesso, usando word2fst e composição de FSTs, tanto nos romanos, como nos transdutores{1,2,3} e nos codificadores e descodificadores.
+Foram testados todos os exemplos do enunciado com sucesso, usando word2fst e composição de FSTs.
 
+## Problemas
 
 Na descodificação do mail, aparece uma ambiguidade errada, pois entendo que a descodificação deveria ser linear. Esta ambiguidade é:
 eps ->	eps
