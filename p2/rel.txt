@@ -11,3 +11,4 @@ O verbo vir é usado muitas vezes como:
 Erros encontrados:
 	virtude - vir não é um verbo, é parte de outra palavra
 	comprimidos "atazana vir" - espaço a mais, o nome correcto é "atazanavir"
+	ser vir
