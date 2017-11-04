@@ -2,6 +2,7 @@
 
 import sys
 import re
+import math
 
 text = []
 unigrams = {}
@@ -16,7 +17,6 @@ def main():
 		print(sentence)
 		
 		words =  re.compile(r'[^a-zA-Z0-9\áéíóúàèìòùâêîôûãẽĩõũç\-]').split(sentence)
-		print(words)
 		
 		# clean up empty words that showed up
 		# FIXME: not cleaning up
@@ -30,23 +30,26 @@ def main():
 			
 			#~ print(result, end=",")
 		
-		sentence = ["<s>"] + words
+		#~ sentence = ["<s>"] + words
+		sentence = words
 		
-		# ERROR: NOT WORKING AT ALL, EVERYTHING IS 0
+		sum_results = 0
 		for i in range(1, len(sentence)):
-			bigram = sentence[i-1] + " " + sentence[i]
+			word1 = sentence[i-1]
+			word2 = sentence[i]
+			bigram = word1 + " " + word2
 			
 			if bigram not in bigrams:
 				result = 0
 			
 			else:
-				result = bigrams[bigram]
+				#~ result = math.log(bigrams[bigram]/unigrams[word1])
+				result = bigrams[bigram]/unigrams[word1]
 		
-			print(bigram)
-			print(result)
+			#~ print(result, end=",")
+			sum_results = sum_results + result
 			
-		print()
-	
+		print(sum_results)	
 	
 
 def process_files():
@@ -58,7 +61,11 @@ def process_files():
 	
 	f = open(tests_name, "r")
 	for line in f.readlines():
-		text.append(line.replace("\n", ""))
+		line = line.replace("\n", "")
+		text.append(line)
+		
+		if "vir" in line:
+			text.append(line.replace("vir", "ver"))
 	
 	f = open(unigs_name, "r")
 	for line in f.readlines():
@@ -78,7 +85,7 @@ def process_files():
 		both_words = splits[0]
 		count = int(splits[1])
 		
-		unigrams[both_words] = count
+		bigrams[both_words] = count
 	
 
 if __name__ == "__main__":
