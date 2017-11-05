@@ -5,3 +5,4 @@ Erros encontrados:
 
 No cálculo das probabilidades, usei somas de módulo do logaritmo, para lidar com 0s e valores muito baixos.
 Para alisar, usei o método add-one devido à sua simplicidade de implementação.
+Pelos exemplos não percebi qual seria o valor a imprimir após o alisamento, pelo que usei apenas a contagem nos ficheiros unigramas/bigramas e fiz o alisamento no script 'lemas.py'.
