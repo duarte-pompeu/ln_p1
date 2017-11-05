@@ -2,10 +2,12 @@ Um grande problema neste corpos é que a palavra vir" aparece:
 	-609 vezes como conjugação do verbo vir
 	-8 vezes como conjugação do verbo ver
 
-Esta discrepância leva a problemas na viabilidade dos n-gramas.
+Esta discrepância leva a que haja pouca informação sobre a 2ª conjugação.
 O ficheiro virFrases.txt usa:
 	-2x vir de ver
 	-3x vir de vir
 
 Sem alisamento, o programa considera tudo "vir", ou seja, 2/100% Falsos Negativos para "vir" de "ver".
 Com alisamento, o programa considera tem 1/50% Falsos Negativos para "vir" de "ver", e 3/100% Positivos Verdadeiros para "vir" de "vir".
+
+Como a mesma palavra é uma conjugação diferente de cada verbo (futuro do conjuntivo do verbo vir, infinitivo do verbo ver), acho que isto leva a frases bastante distintas para as duas conjugações, levando a que n-gramas possam ser uma boa estratégia. Infelizmente, não havia muitas frases com o verbo "ver". Acredito que havendo mais frases com a 2ª forma (50 ou mais),  e se calhar usando mais palavras (trigramas ou mais) que o programa tivesse melhores resultados. 

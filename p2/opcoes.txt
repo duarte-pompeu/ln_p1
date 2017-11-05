@@ -4,4 +4,4 @@ Erros encontrados:
 	ser vir -> servir
 
 No cálculo das probabilidades, usei somas de módulo do logaritmo, para lidar com 0s e valores muito baixos.
-
+Para alisar, usei o método add-one devido à sua simplicidade de implementação.
