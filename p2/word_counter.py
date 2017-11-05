@@ -50,7 +50,7 @@ def get_unigrams(text):
 			else:
 				word_counter[w] = word_counter[w] + 1
 
-	f_uni = open("unigramas.txt", "w");
+	f_uni = open("virUnigramas.txt", "w");
 	for word, count in sorted(word_counter.items()):
 		f_uni.write("{}\t{}\n".format(word, count))
 
@@ -72,7 +72,7 @@ def get_bigrams(text):
 			else:
 				bi_counter[bigram] = bi_counter[bigram] + 1
 	
-	f_bi = open("bigramas.txt", "w");
+	f_bi = open("virBigramas.txt", "w");
 	for bigram, count in sorted(bi_counter.items()):
 		f_bi.write("{}\t{}\n".format(bigram, count))
 

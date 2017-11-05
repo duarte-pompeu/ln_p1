@@ -14,43 +14,60 @@ def main():
 	for sentence in text:
 		sentence = sentence.lower()
 		
+		scoreVir = sentence_ods(sentence)
+		scoreVer = sentence_ods(sentence.replace("vir", "ver"))
+		
 		print(sentence)
+		if scoreVir == scoreVer:
+			print("Probabilidades iguais: " + str(scoreVir))
+			print("Resultado: VIR (é o mais comum no corpus)")
 		
-		words =  re.compile(r'[^a-zA-Z0-9\áéíóúàèìòùâêîôûãẽĩõũç\-]').split(sentence)
+		elif scoreVir >= scoreVer:
+			print("Vir: {}, Ver: {}".format(str(scoreVir),str(scoreVer)))
+			print("Resultado: VIR")
 		
-		# clean up empty words that showed up
-		# FIXME: not cleaning up
-		tmp = [word for word in words if len(word) > 0]
+		else:
+			print("Vir: {}, Ver: {}".format(str(scoreVir),str(scoreVer)))
+			print("Resultado: VER")
 		
-		for word in words:
-			if word in unigrams:
-				result = unigrams[word]
-			else:
-				unigrams[word] = 0
-			
-			#~ print(result, end=",")
+		print()
 		
-		#~ sentence = ["<s>"] + words
-		sentence = words
+
+def sentence_ods(sentence):
+	words =  re.compile(r'[^a-zA-Z0-9\áéíóúàèìòùâêîôûãẽĩõũç\-]').split(sentence)
 		
-		sum_results = 0
-		for i in range(1, len(sentence)):
-			word1 = sentence[i-1]
-			word2 = sentence[i]
-			bigram = word1 + " " + word2
-			
-			if bigram not in bigrams:
-				result = 0
-			
-			else:
-				#~ result = math.log(bigrams[bigram]/unigrams[word1])
-				result = bigrams[bigram]/unigrams[word1]
-		
-			#~ print(result, end=",")
-			sum_results = sum_results + result
-			
-		print(sum_results)	
+	# clean up empty words that showed up
+	# FIXME: not cleaning up
+	tmp = [word for word in words if len(word) > 0]
 	
+	for word in words:
+		if word in unigrams:
+			result = unigrams[word]
+		else:
+			unigrams[word] = 0
+		
+		#~ print(result, end=",")
+	
+	#~ sentence = ["<s>"] + words
+	sentence = words
+	
+	final_result = 0
+	for i in range(1, len(sentence)):
+		word1 = sentence[i-1]
+		word2 = sentence[i]
+		bigram = word1 + " " + word2
+		
+		if bigram not in bigrams:
+			result = 0
+		
+		else:
+			#~ result = math.log(bigrams[bigram]/unigrams[word1])
+			result = bigrams[bigram]/ max(1, unigrams[word1])
+	
+		#~ print(result, end=",")
+		final_result = final_result + result
+	
+	return final_result
 
 def process_files():
 	args = sys.argv[1:]	
@@ -64,8 +81,8 @@ def process_files():
 		line = line.replace("\n", "")
 		text.append(line)
 		
-		if "vir" in line:
-			text.append(line.replace("vir", "ver"))
+		#~ if "vir" in line:
+			#~ text.append(line.replace("vir", "ver"))
 	
 	f = open(unigs_name, "r")
 	for line in f.readlines():
