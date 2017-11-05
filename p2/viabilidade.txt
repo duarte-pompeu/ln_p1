@@ -1,0 +1,11 @@
+Um grande problema neste corpos é que a palavra vir" aparece:
+	-609 vezes como conjugação do verbo vir
+	-8 vezes como conjugação do verbo ver
+
+Esta discrepância leva a problemas na viabilidade dos n-gramas.
+O ficheiro virFrases.txt usa:
+	-2x vir de ver
+	-3x vir de vir
+
+Sem alisamento, o programa considera tudo "vir", ou seja, 2/100% Falsos Negativos para "vir" de "ver".
+Com alisamento, o programa considera tem 1/50% Falsos Negativos para "vir" de "ver", e 3/100% Positivos Verdadeiros para "vir" de "vir".

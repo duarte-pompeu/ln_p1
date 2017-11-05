@@ -35,8 +35,11 @@ def main():
 	get_bigrams(text)
 
 def get_unigrams(text):
+	word_counter["<s>"] = 0
+	
 	for line in text.split("\n"):
 		print(line)
+		word_counter["<s>"] = word_counter["<s>"] + 1
 		
 		# split with regex
 		words = re.compile(r'[^a-zA-Z0-9\áéíóúàèìòùâêîôûãẽĩõũç\-]').split(line)

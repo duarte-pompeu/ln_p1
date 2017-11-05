@@ -1,0 +1,7 @@
+Erros encontrados:
+	virtude - vir não é um verbo, é parte de outra palavra
+	comprimidos "atazana vir" - espaço a mais, o nome correcto é "atazanavir"
+	ser vir -> servir
+
+No cálculo das probabilidades, usei somas de módulo do logaritmo, para lidar com 0s e valores muito baixos.
+

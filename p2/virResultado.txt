@@ -1,0 +1,50 @@
+SEM ALISAMENTO:
+
+se vir o suspeito, ligue para a polícia imediatamente.
+Vir: 21.588933187048372, Ver: 18.43149864390316
+Resultado: VIR
+
+se não o vir mais hoje, até amanhã.
+Vir: 16.926494666387118, Ver: 12.179824918125327
+Resultado: VIR
+
+amanhã há-de vir sol.
+Vir: 0.40546510810816444, Ver: 0
+Resultado: VIR
+
+o palácio de belém pode vir a fechar 4 dias por semana.
+Vir: 3.6032707322840585, Ver: 2.6322313645448587
+Resultado: VIR
+
+uma defesa versátil contra infecções produzida por todas as criaturas vivas, que um dia pode vir a ser usada em medicamentos para proteger os seres humanos.
+Vir: 20.379849682523094, Ver: 19.408810314783896
+Resultado: VIR
+
+
+
+
+COM ALISAMENTO:
+
+se vir o suspeito, ligue para a polícia imediatamente.
+Vir: 34.207828546943745, Ver: 34.259821509017705
+Resultado: VER
+
+se não o vir mais hoje, até amanhã.
+Vir: 28.28701647259347, Ver: 21.24560480879866
+Resultado: VIR
+
+amanhã há-de vir sol.
+Vir: 7.159486287148259, Ver: 0
+Resultado: VIR
+
+o palácio de belém pode vir a fechar 4 dias por semana.
+Vir: 12.358394544367485, Ver: 4.914578804125734
+Resultado: VIR
+
+uma defesa versátil contra infecções produzida por todas as criaturas vivas, que um dia pode vir a ser usada em medicamentos para proteger os seres humanos.
+Vir: 48.09038362182813, Ver: 40.646567881586385
+Resultado: VIR
+
+
+
+
