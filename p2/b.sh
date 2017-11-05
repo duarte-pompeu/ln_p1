@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# TAREFA 1
 # testar se frases não desejadas estão a ser filtradas bem
 mkdir teste
 cat $1 | grep -P "n-é-verbo.*\t" > teste/n_verbo.txt
@@ -18,3 +19,9 @@ cat $1 | grep -vP "n-é-verbo.*\t" \
 # alterar verbo para lema no inicio da frase
 # formato da frase: (lema)\t(texto)(vir)(texto)
 sed -E -i 's/(.*)\t(.*)(vir)(.*)/\2\1\4/g' $FINAL
+
+# TAREFA 2
+./word_counter.py < virAnotado.final
+
+# TAREFA 3
+./lemas.py virUnigramas.txt virBigramas.txt  aux/anotador/foiParametrizacao.txt virFrases.txt > virResultado.txt
